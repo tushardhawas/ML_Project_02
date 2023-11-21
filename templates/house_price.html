@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Project 1</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./static/css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    
+</head>
+
+<body>
+
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <h1 class="header center orange-text" align='center'>HOUSE PRICE PREDECTION</h1>
+            <hr>
+            <div class="row center">
+                <h5 class="header col s12 light" align='center'>Model Predict the House pricing according to entered preference.
+                    <br>
+                </h5>
+            </div>
+
+            <div class="row" align='center'>
+                <form action='/predict' method="POST" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <label for="area"><b>Area sq. ft.</b></label>
+                            <br>
+                            <input id="area" name='Area' type="text" class="validate">
+                        </div>
+                        <div class="input-field col s4">
+
+                            <label for="bedrooms"><b>Bedrooms</b></label>
+                            <br>
+                            <input id="bedrooms" name="Bedrooms" type="text" class="validate">
+
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="bathrooms"><b>Bathrooms</b></label>
+                            <br>
+                            <input id="bathrooms" name="Bathrooms" type="text" class="validate">
+
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="stories"><b>Stories</b></label>
+                            <br>
+                            <input id="stories" name="Stories" type="text" class="validate">
+
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="mainroad"><b>Main Road(0/1)</b></label>
+                            <br>
+                            <input id="mainroad" name="Main Road" type="text" class="validate" list="Mainroad">
+                                <datalist id="Mainroad">
+                                  <option value="0">
+                                  <option value="1">
+                                </datalist>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="guestroom"><b>Guestroom(0/1)</b></label>
+                            <br>
+                            <input id="guestroom" name="Guestroom" type="text" class="validate", list="guest">
+                                <datalist id="guest">
+                                    <option value="0">
+                                    <option value="1">
+                                </datalist>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="basement"><b>Basement(0/1)</b></label>
+                            <br>
+                            <input id="basement" name="Basement" type="text" class="validate" list="base">
+                            <datalist id="base">
+                                <option value="0">
+                                <option value="1">
+                            </datalist>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="hotwaterheating"><b>Hot_Water_Heating(0/1)</b></label>
+                            <br>
+                            <input id="hotwaterheating" name="Hot_Water_Heating" type="text" class="validate" list="hwh">
+                                <datalist id="hwh">
+                                    <option value="0">
+                                    <option value="1">
+                                </datalist>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="airconditioning"><b>Air_Conditioning(0/1)</b></label>
+                            <br>
+                            <input id="airconditioning" name="Air_Conditioning" type="text" class="validate" list="AC">
+                                <datalist id="AC">
+                                    <option value="0">
+                                    <option value="1">
+                                 </datalist>
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="parking"><b>Parking_Slots</b></label>
+                            <br>
+                            <input id="parking" name="Parking" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="prefarea"><b>Pref_area(0/1)</b></label>
+                            <br>
+                            <input id="prefarea" name="Pref_area" type="text" class="validate" list="parea">
+                            <datalist id="parea">
+                                <option value="0">
+                                <option value="1">
+                            </datalist>
+
+                        </div>
+
+                        <div class="input-field col s4">
+                            <label for="furnishingstatus"><b>Furnishing_Status(0/1/2)</b></label>
+                            <br>
+                            <input id="furnishingstatus" name="Furnishing_Status" type="text" class="validate" list="fstatus">
+                            <datalist id="fstatus">
+                                <option value="0">
+                                <option value="1">
+                                <option value="2">
+                            </datalist>
+
+                        </div>
+
+                    </div>
+                    <h1></h1>
+                    <div class="row center">
+
+                        <button type="submit" class="btn-large waves-effect waves-light orange">Predict
+                            Price</button>
+                    </div>
+                </form>
+            </div>
+
+            <br>
+            <h4 align="center" <b>{{pred}}</b></h4>
+            <br>
+
+        </div>
+    </div>
+
+
+    <footer class="page-footer orange">
+        <div class="footer-copyright">
+            <div class="container">
+
+                <div aria-label="Social Bar">
+                    <a href="https://www.linkedin.com/in/ganesh-shelar" target="_blank" rel="noreferrer noopener">
+                            <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Linkedin2_svg-128.png"
+                                alt="LinkedIn" height="20" weidth="20" />
+                        </a>
+
+                        <a href="http://www.twitter.com/GaneshS46949060" target="_blank" rel="noreferrer noopener">
+                            <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-128.png"
+                                alt="Twitter" height="20" weidth="20" />
+                        </a>
+
+                        <a href="https://instagram.com/_.ganesh._14/" target="_blank" rel="noreferrer noopener">
+                            <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-128.png"
+                                alt="Instagram" height="20" weidth="20" />
+                        </a>
+
+                        <a href="https://github.com/ganeshs14" target="_blank" rel="noreferrer noopener">
+                            <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-128.png"
+                                alt="GitHub" height="20" weidth="20" />
+                        </a>
+
+                    </div>
+                <h5>Made by <a class="orange-text text-lighten-3"
+                        href="https://ganeshs0520.wixsite.com/portfolio">Ganesh
+                        Shelar</a>
+                </h5>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
